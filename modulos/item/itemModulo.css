@@ -1,5 +1,32 @@
 .item {
     height: 20rem;
     width: 20rem;
-    background-color: red;
+    background-color: rgb(192, 180, 180);
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+    justify-content: center;
+    border-radius: 10%;
+
+}
+
+.img{
+    width: 50%;
+    overflow: hidden;
+    margin: auto;
+    
+    
+}
+
+.h1{
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(218, 40, 40);
+}
+
+.Descripcion{
+  padding: 10px;
+  color: rgb(192, 17, 17);
+
 }
