@@ -9,7 +9,7 @@ function header(){
 
     let div = document.createElement('div');
     div.className = "div";
-    div.innerText = "😵‍💫";
+    div.innerText = "😵";
     header.appendChild(div);
 
     return header;
