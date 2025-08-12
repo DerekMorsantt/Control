@@ -13,8 +13,6 @@
     width: 50%;
     overflow: hidden;
     margin: auto;
-    
-    
 }
 
 .h1{
@@ -26,7 +24,12 @@
 }
 
 .Descripcion{
-  padding: 10px;
+  padding: 8px;
+  font-size: 14px;
   color: rgb(192, 17, 17);
 
+}
+
+.verde {
+    background-color: cornflowerblue;
 }
