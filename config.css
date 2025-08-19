@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
-.titulo {
+.ocultar {
+    display: none;
+}
 
+html {
+    font-family: 'Times New Roman', Times, serif;
 }

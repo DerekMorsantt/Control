@@ -4,7 +4,7 @@ function header(){
     
     let titulo = document.createElement('h1');
     titulo.className = "titulo1";
-    titulo.innerText = "DerekMorsant";
+    titulo.innerText = "@DerekMorsant";
     header.appendChild(titulo);
 
     let div = document.createElement('div');
