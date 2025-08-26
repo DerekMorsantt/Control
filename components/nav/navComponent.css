@@ -1,0 +1,16 @@
+.nav {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height:  100px;
+    margin-top: 50px;
+}   
+
+.div {
+    cursor: pointer;
+    padding: 1.8rem;
+    margin: 2rem;
+    border: 1px solid black;
+}
