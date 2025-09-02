@@ -1,3 +1,5 @@
+import { guardarProducto, obtenerProductos } from "../../control/localStorage.js";
+
 export function item(titulo, urlImg, Descripcion, Precio) {
 
     let item = document.createElement('div');
@@ -24,10 +26,11 @@ export function item(titulo, urlImg, Descripcion, Precio) {
     item.appendChild(precio);
 
     item.addEventListener('click', () => {
-        item.classList.add("verde");
-        let rheader = document.querySelector('.header');
-        rheader.classList.add("ocultar");
+       guardarProducto("Hola mundo");
+       console.log("Producto en LocalStorage");
+       location.reload();
     });
     
+
     return item;
 }

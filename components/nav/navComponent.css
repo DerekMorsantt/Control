@@ -1,16 +1,42 @@
 .nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height:  100px;
-    margin-top: 50px;
+    width: 100%;
+    background-color: white;
 }   
 
 .div {
     cursor: pointer;
     padding: 1.8rem;
     margin: 2rem;
-    border: 1px solid black;
+    
+}
+
+.div-car{
+    cursor: pointer;
+    padding: 1.8rem;
+    margin: 2rem;
+    position: relative;
+    font-size: 40px;
+}
+.div-item {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    border-radius: 100%;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
