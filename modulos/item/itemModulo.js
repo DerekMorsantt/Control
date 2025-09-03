@@ -1,8 +1,7 @@
-
 import { guardarProducto, obtenerProductos } from "../../control/miLocalStorange.js";
 import { listaDeCompras } from "../../main.js";
 
-export function item(id,titulo,urlImg,description,price){
+export function item(id, titulo, urlImg, description, price) {
 
     let item = document.createElement('div');
     item.className = "item";
@@ -10,9 +9,10 @@ export function item(id,titulo,urlImg,description,price){
     let h3 = document.createElement('h3');
     h3.textContent = titulo;
     item.appendChild(h3);
-    
+
     let img = document.createElement('img');
     img.src = urlImg;
+    img.alt = titulo;
     item.appendChild(img);
 
     let p = document.createElement('p');
@@ -23,15 +23,29 @@ export function item(id,titulo,urlImg,description,price){
     span.textContent = "$" + price;
     item.appendChild(span);
 
-    item.addEventListener('click', ()=>{
+    // Evento para agregar al carrito
+    item.addEventListener('click', () => {
+        // Recuperar productos y asegurarse de que sea un array
         let carritoLocalStorange = obtenerProductos();
-        console.log("carrito: ", carritoLocalStorange);
-        
-        carritoLocalStorange.push({id:id,precio:price,nombre:titulo, img:urlImg});
+        if (!Array.isArray(carritoLocalStorange)) {
+            carritoLocalStorange = [];
+        }
+
+        // Agregar nuevo producto
+        carritoLocalStorange.push({
+            id: id,
+            nombre: titulo,
+            precio: price,
+            img: urlImg
+        });
+
+        // Guardar en LocalStorage
         guardarProducto(carritoLocalStorange);
-        console.log("Producto en LocalStorange");
+        console.log("Producto agregado al carrito:", { id, titulo, price });
+
+        // Recargar página si quieres reflejar cambios
         location.reload();
-});
+    });
 
     return item;
 }

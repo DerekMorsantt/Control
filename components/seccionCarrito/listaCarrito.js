@@ -4,8 +4,22 @@ export function listaCarrito() {
     let seccion = document.createElement('section');
     seccion.className = "carrito"; // clase para el CSS
 
+    // Recuperar productos y asegurarse de que sea un array
     let recuperarProductos = obtenerProductos();
+    if (!Array.isArray(recuperarProductos)) {
+        recuperarProductos = [];
+    }
 
+    // Si no hay productos, mostrar mensaje
+    if (recuperarProductos.length === 0) {
+        let mensaje = document.createElement('p');
+        mensaje.textContent = "No hay productos en el carrito.";
+        mensaje.className = "mensaje-carrito";
+        seccion.appendChild(mensaje);
+        return seccion;
+    }
+
+    // Recorrer productos y mostrarlos
     recuperarProductos.forEach(element => {
         // div general para el producto
         let divProducto = document.createElement('div');
@@ -16,20 +30,20 @@ export function listaCarrito() {
         divImagen.className = "producto-imagen";
 
         let img = document.createElement('img');
-        img.src = element.img;
-        img.alt = element.nombre;
+        img.src = element.img || ""; // evitar errores si no hay img
+        img.alt = element.nombre || "Producto";
 
         divImagen.appendChild(img);
 
         // p para nombre
         let pNombre = document.createElement('p');
         pNombre.className = "producto-nombre";
-        pNombre.textContent = element.nombre;
+        pNombre.textContent = element.nombre || "Sin nombre";
 
         // p para precio
         let pPrecio = document.createElement('p');
         pPrecio.className = "producto-precio";
-        pPrecio.textContent = `$${element.precio}`;
+        pPrecio.textContent = element.precio !== undefined ? `$${element.precio}` : "Sin precio";
 
         // añadir todo al div en general
         divProducto.appendChild(divImagen);
