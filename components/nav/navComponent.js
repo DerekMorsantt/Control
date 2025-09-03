@@ -21,7 +21,7 @@ export function nav() {
     nav.appendChild(div3);
 
     let div4 = document.createElement('a');
-    div4.href = "../pages/carrito/carrito.html";
+    div4.href = "pages/carrito/carrito.html";
     div4.className = "cuadros";
     div4.textContent = "🛒";
     
