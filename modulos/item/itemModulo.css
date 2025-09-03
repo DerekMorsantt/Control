@@ -1,0 +1,44 @@
+.item {
+  width: 30rem;
+  height: 30rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.item h3 {
+  font-size: 12px;
+}
+
+.item p {
+  font-size: 6px;
+}
+
+.item span {
+  font-size: 15px;
+  color: green;
+  margin-top: 5px;
+}
+
+.verde {
+  background-color: green;
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 18rem; 
+    height: 35rem;
+  }
+}
+                                                                                                                                                                                                                                                                          
